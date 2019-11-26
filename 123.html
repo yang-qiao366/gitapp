@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title></title>
+
+  
+</head>
+<body>
+    <button id="btn">点我复制</button>
+<script>
+const btn = document.querySelector('#btn');
+    btn.addEventListener('click',() => {
+    const input = document.createElement('input');
+    input.setAttribute('readonly', 'readonly');
+    document.body.appendChild(input);
+    input.setAttribute('value', '听说你想复制我');
+    input.select();
+    input.setSelectionRange(0, 9999);
+    document.execCommand('copy');
+    document.body.removeChild(input);
+})
+    </script>
+
+</body>
+</html>        
+        
